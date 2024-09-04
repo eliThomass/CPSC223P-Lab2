@@ -8,10 +8,10 @@ def print_list(list_):
 
 def add_contact(list_,first, last):
 	list_.append([first,last])
-"""
-def modify_contact(first, last):
-	return
 
+def modify_contact(list_, index, first, last):
+	list_[index] = [first, last]
+"""
 def delete_contact(first, last):
 	return
 """
