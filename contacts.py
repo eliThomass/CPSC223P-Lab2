@@ -3,18 +3,29 @@
 # File Purpose: 
 
 def print_list(list_):
+	print("==========CONTACT LIST===========")
+	
 	for name in list_:
 		print(name)
 
 def add_contact(list_,first, last):
 	list_.append([first,last])
+	return list_
 
 def modify_contact(list_, index, first, last):
+	if(index > len(list_)):
+		print("Invalid index number.")
+		return list_
 	list_[index] = [first, last]
-"""
-def delete_contact(first, last):
-	return
-"""
+	return list_
+	
+def delete_contact(list_, index,):
+	if(index > len(list_)):
+		print("Invalid index number.")
+		return list_
+	list_.pop(index)
+	return list_
+	
 def print_menu():
 	print("")
 	print("     *** TUFFY TITAN CONTACT MAIN MENU ***     ")

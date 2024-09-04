@@ -28,7 +28,8 @@ while exit_program == False:
 		modify_contact(contact_list, index, first, last)
 		
 	if choice == 4:
-		delete_contact()
+		index = int(input("Enter index to modify: "))
+		delete_contact(contact_list, index)
 		
 	if choice == 5:
 		exit_program = True
