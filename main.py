@@ -5,7 +5,7 @@
 from contacts import *
 
 exit_program = False
-contact_list = []
+contact_count = 0
 
 while exit_program == False:
 
@@ -19,7 +19,9 @@ while exit_program == False:
 	elif choice == 2:
 		first = input("Enter first name: ")
 		last = input("Enter last name: ")
-		add_contact(first, last)
+		contact = {'first': first, 'last': last}
+		add_contact(contact)
+		contact_count += 1
 		
 	elif choice == 3:
 		if len(contact_list) == 0:
@@ -28,11 +30,13 @@ while exit_program == False:
 		index = int(input("Enter index to modify: "))
 		first = input("Enter first name: ")
 		last = input("Enter last name: ")
-		modify_contact(contact_list, index, first, last)
+		contact = {'first': first, 'last': last}
+		modify_contact(index, contact)
 		
 	elif choice == 4:
 		index = int(input("Enter index to modify: "))
 		delete_contact(contact_list, index)
+		contact_count -= 1
 		
 	elif choice == 5:
 		exit_program = True

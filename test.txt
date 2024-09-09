@@ -1,17 +1,4 @@
-EEEEE
-======================================================================
-ERROR: test_list_int (__main__.Test01_AddContact.test_list_int)
-*** Test01 *** Calling the 'add_contact' method passing a contact list [['Richard','Stallman']] and adding the contact ['Steve','Jobs'] should return [['Richard','Stallman'],['Steve','Jobs']] ***
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/usr/lib/python3.12/unittest/mock.py", line 1390, in patched
-    return func(*newargs, **newkeywargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/test.py", line 15, in test_list_int
-    result = add_contact(contacts)
-             ^^^^^^^^^^^^^^^^^^^^^
-TypeError: add_contact() missing 2 required positional arguments: 'first' and 'last'
-
+FEEEE
 ======================================================================
 ERROR: test_list_int (__main__.Test02_ModifyContact.test_list_int)
 *** Test02 *** Calling the 'modify_contact' method passing a contact list [['Richard','Stallman'],['Bill','Gates']] and modifing the contact at index 1 with ['Steve','Jobs'] should return [['Richard','Stallman'],['Steve','Jobs']] ***
@@ -23,7 +10,7 @@ Traceback (most recent call last):
   File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/test.py", line 25, in test_list_int
     result = modify_contact(contacts)
              ^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: modify_contact() missing 3 required positional arguments: 'index', 'first', and 'last'
+TypeError: modify_contact() missing 2 required positional arguments: 'first' and 'last'
 
 ======================================================================
 ERROR: test_list_int (__main__.Test03_ModifyContact.test_list_int)
@@ -36,7 +23,7 @@ Traceback (most recent call last):
   File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/test.py", line 37, in test_list_int
     result = modify_contact(contacts)
              ^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: modify_contact() missing 3 required positional arguments: 'index', 'first', and 'last'
+TypeError: modify_contact() missing 2 required positional arguments: 'first' and 'last'
 
 ======================================================================
 ERROR: test_list_int (__main__.Test04_DeleteContact.test_list_int)
@@ -49,7 +36,10 @@ Traceback (most recent call last):
   File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/test.py", line 49, in test_list_int
     result = delete_contact(contacts)
              ^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: delete_contact() missing 1 required positional argument: 'index'
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/contacts.py", line 33, in delete_contact
+    if(index > len(contact_list_)):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'list' and 'int'
 
 ======================================================================
 ERROR: test_list_int (__main__.Test05_DeleteContact.test_list_int)
@@ -62,9 +52,32 @@ Traceback (most recent call last):
   File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/test.py", line 61, in test_list_int
     result = modify_contact(contacts)
              ^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: modify_contact() missing 3 required positional arguments: 'index', 'first', and 'last'
+TypeError: modify_contact() missing 2 required positional arguments: 'first' and 'last'
+
+======================================================================
+FAIL: test_list_int (__main__.Test01_AddContact.test_list_int)
+*** Test01 *** Calling the 'add_contact' method passing a contact list [['Richard','Stallman']] and adding the contact ['Steve','Jobs'] should return [['Richard','Stallman'],['Steve','Jobs']] ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/mock.py", line 1390, in patched
+    return func(*newargs, **newkeywargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/test.py", line 16, in test_list_int
+    self.assertEqual(result, [['Richard', 'Stallman'], ['Steve', 'Jobs']])
+AssertionError: Lists differ: [[['Richard', 'Stallman']]] != [['Richard', 'Stallman'], ['Steve', 'Jobs']]
+
+First differing element 0:
+[['Richard', 'Stallman']]
+['Richard', 'Stallman']
+
+Second list contains 1 additional elements.
+First extra element 1:
+['Steve', 'Jobs']
+
+- [[['Richard', 'Stallman']]]
++ [['Richard', 'Stallman'], ['Steve', 'Jobs']]
 
 ----------------------------------------------------------------------
 Ran 5 tests in 0.007s
 
-FAILED (errors=5)
+FAILED (failures=1, errors=4)
