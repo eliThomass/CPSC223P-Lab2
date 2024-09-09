@@ -10,7 +10,7 @@ Traceback (most recent call last):
   File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/test.py", line 25, in test_list_int
     result = modify_contact(contacts)
              ^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: modify_contact() missing 2 required positional arguments: 'first' and 'last'
+TypeError: modify_contact() missing 1 required positional argument: 'contacts'
 
 ======================================================================
 ERROR: test_list_int (__main__.Test03_ModifyContact.test_list_int)
@@ -23,7 +23,7 @@ Traceback (most recent call last):
   File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/test.py", line 37, in test_list_int
     result = modify_contact(contacts)
              ^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: modify_contact() missing 2 required positional arguments: 'first' and 'last'
+TypeError: modify_contact() missing 1 required positional argument: 'contacts'
 
 ======================================================================
 ERROR: test_list_int (__main__.Test04_DeleteContact.test_list_int)
@@ -36,10 +36,10 @@ Traceback (most recent call last):
   File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/test.py", line 49, in test_list_int
     result = delete_contact(contacts)
              ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/contacts.py", line 33, in delete_contact
-    if(index > len(contact_list_)):
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: '>' not supported between instances of 'list' and 'int'
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/contacts.py", line 32, in delete_contact
+    if index < 0 or int(index) >= len(contact_list_):
+       ^^^^^^^^^
+TypeError: '<' not supported between instances of 'list' and 'int'
 
 ======================================================================
 ERROR: test_list_int (__main__.Test05_DeleteContact.test_list_int)
@@ -52,7 +52,7 @@ Traceback (most recent call last):
   File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/test.py", line 61, in test_list_int
     result = modify_contact(contacts)
              ^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: modify_contact() missing 2 required positional arguments: 'first' and 'last'
+TypeError: modify_contact() missing 1 required positional argument: 'contacts'
 
 ======================================================================
 FAIL: test_list_int (__main__.Test01_AddContact.test_list_int)

@@ -4,7 +4,7 @@
 
 contact_list_ = []
 
-def print_list(list_):
+def print_list():
 	print("\n========= CONTACT LIST ==========")
 	print("Index    First Name   Last Name")
 	index = 0
@@ -21,15 +21,15 @@ def add_contact(fullname):
 	contact_list_.append(fullname)
 	return contact_list_
 
-def modify_contact(index, modified_contact):
+def modify_contact(index, contacts):
 	if(index > len(contact_list_)):
 		print("Invalid index number.")
 		return contact_list_
-	contact_list_[index] = modified_contact
+	contact_list_[index] = contacts
 	return contact_list_
 	
-def delete_contact(index, fullname):
-	if(index > len(contact_list_)):
+def delete_contact(index):
+	if index < 0 or int(index) >= len(contact_list_):
 		print("Invalid index number.")
 		return contact_list_
 	contact_list_.pop(index)
