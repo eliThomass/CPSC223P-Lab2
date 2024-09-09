@@ -5,11 +5,12 @@
 contact_list_ = []
 
 def print_list():
-	print("\n========= CONTACT LIST ==========")
-	print("Index    First Name   Last Name")
+	print("================== CONTACT LIST ==================")
+	print("Index   First Name            Last Name")
+	print("======  ====================  ====================")
 	index = 0
 	for contact in contact_list_:
-		print("{:<8} {:<12} {:<12}".format(index, contact[0], contact[1]))
+		print("{:<7} {:<21} {:<22}".format(index, contact[0], contact[1]))
 		index += 1
 
 def add_contact(contact_list):
@@ -19,22 +20,28 @@ def add_contact(contact_list):
 	return contact_list
 
 def modify_contact(contact_list):
-	index = int(input("Enter index to modify: "))
-	if(index >= len(contact_list)):		
-		print("Invalid index number.")
+	try:
+		index = int(input("Enter index to modify: "))
+		if(index >= len(contact_list)):		
+			print("Invalid index number.")
+			return contact_list
+		first = input("Enter first name: ")
+		last = input("Enter last name: ")
+		contact_list[index] = [first,last]
 		return contact_list
-	first = input("Enter first name: ")
-	last = input("Enter last name: ")
-	contact_list[index] = [first,last]
-	return contact_list
+	except:
+		print("Invalid input.")
 	
 def delete_contact(contact_list):
-	index = int(input("Enter index to modify: "))
-	if index < 0 or int(index) >= len(contact_list):
-		print("Invalid index number.")
+	try:
+		index = int(input("Enter index to modify: "))
+		if index < 0 or int(index) >= len(contact_list):
+			print("Invalid index number.")
+			return contact_list
+		contact_list.pop(index)
 		return contact_list
-	contact_list.pop(index)
-	return contact_list
+	except:
+		print("Invalid input.")
 	
 def print_menu():
 	print("\n     *** TUFFY TITAN CONTACT MAIN MENU ***     ")
