@@ -1,11 +1,10 @@
 # Name: Eli Thomas
 # Date: 9/4/2024
-# File Purpose: main driver for contact menu
+# File Purpose: Main driver for contact menu
 
 from contacts import *
 
 exit_program = False
-contact_count = 0
 
 while exit_program == False:
 
@@ -19,18 +18,14 @@ while exit_program == False:
 	elif choice == 2:
 		first = input("Enter first name: ")
 		last = input("Enter last name: ")
-		contact = {'first': first, 'last': last}
+		contact = [first, last]
 		add_contact(contact)
 		
 	elif choice == 3:
 		if len(contact_list_) == 0:
 			print("List is empty!")
 			continue
-		index = int(input("Enter index to modify: "))
-		first = input("Enter first name: ")
-		last = input("Enter last name: ")
-		contact = {'first': first, 'last': last}
-		modify_contact(index, contact)
+		modify_contact(contact_list_)
 		
 	elif choice == 4:
 		index = int(input("Enter index to modify: "))

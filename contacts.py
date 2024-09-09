@@ -1,6 +1,6 @@
 # Name: Eli Thomas
 # Date: 9/4/2024
-# File Purpose: 
+# File Purpose: Add functionality for contact list
 
 contact_list_ = []
 
@@ -9,23 +9,21 @@ def print_list():
 	print("Index    First Name   Last Name")
 	index = 0
 	for contact in contact_list_:
-		print("{:<8} {:<12} {:<12}".format(index, contact['first'], contact['last']))
+		print("{:<8} {:<12} {:<12}".format(index, contact[0], contact[1]))
 		index += 1
-"""
-def add_contact(first, last):
-	contact = {'first': first, 'last': last}
-	contact_list_.append(contact)
-	return contact_list_
-"""
+
 def add_contact(fullname):
 	contact_list_.append(fullname)
 	return contact_list_
 
-def modify_contact(index, contacts):
-	if(index > len(contact_list_)):
+def modify_contact(contact_list):
+	index = int(input("Enter index to modify: "))
+	if(index >= len(contact_list_)):
 		print("Invalid index number.")
 		return contact_list_
-	contact_list_[index] = contacts
+	first = input("Enter first name: ")
+	last = input("Enter last name: ")
+	contact_list_[index] = [first,last]
 	return contact_list_
 	
 def delete_contact(index):
