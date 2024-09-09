@@ -1,0 +1,70 @@
+EEEEE
+======================================================================
+ERROR: test_list_int (__main__.Test01_AddContact.test_list_int)
+*** Test01 *** Calling the 'add_contact' method passing a contact list [['Richard','Stallman']] and adding the contact ['Steve','Jobs'] should return [['Richard','Stallman'],['Steve','Jobs']] ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/mock.py", line 1390, in patched
+    return func(*newargs, **newkeywargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/test.py", line 15, in test_list_int
+    result = add_contact(contacts)
+             ^^^^^^^^^^^^^^^^^^^^^
+TypeError: add_contact() missing 2 required positional arguments: 'first' and 'last'
+
+======================================================================
+ERROR: test_list_int (__main__.Test02_ModifyContact.test_list_int)
+*** Test02 *** Calling the 'modify_contact' method passing a contact list [['Richard','Stallman'],['Bill','Gates']] and modifing the contact at index 1 with ['Steve','Jobs'] should return [['Richard','Stallman'],['Steve','Jobs']] ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/mock.py", line 1390, in patched
+    return func(*newargs, **newkeywargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/test.py", line 25, in test_list_int
+    result = modify_contact(contacts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: modify_contact() missing 3 required positional arguments: 'index', 'first', and 'last'
+
+======================================================================
+ERROR: test_list_int (__main__.Test03_ModifyContact.test_list_int)
+*** Test03 *** Calling the 'modify_contact' method passing a contact list [['Richard','Stallman'],['Steve','Jobs']] and modifing the contact at index 3 shoud return 'Invalid index number.' ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/mock.py", line 1390, in patched
+    return func(*newargs, **newkeywargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/test.py", line 37, in test_list_int
+    result = modify_contact(contacts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: modify_contact() missing 3 required positional arguments: 'index', 'first', and 'last'
+
+======================================================================
+ERROR: test_list_int (__main__.Test04_DeleteContact.test_list_int)
+*** Test04 *** Calling the 'delete_contact' method passing a contact list [['Richard','Stallman'],['Bill','Gates'],['Steve','Jobs']] and deleting the contact at index 1 should return [['Richard','Stallman'],['Steve','Jobs']] ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/mock.py", line 1390, in patched
+    return func(*newargs, **newkeywargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/test.py", line 49, in test_list_int
+    result = delete_contact(contacts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: delete_contact() missing 1 required positional argument: 'index'
+
+======================================================================
+ERROR: test_list_int (__main__.Test05_DeleteContact.test_list_int)
+*** Test05 *** Calling the 'delete_contact' method passing a contact list [['Richard','Stallman'],['Steve','Jobs']] and deleting the contact at index 3 shoud return 'Invalid index number.' ***
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/mock.py", line 1390, in patched
+    return func(*newargs, **newkeywargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/eli-thomas/Documents/CPSC223P/CPSC223P-Lab2/test.py", line 61, in test_list_int
+    result = modify_contact(contacts)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: modify_contact() missing 3 required positional arguments: 'index', 'first', and 'last'
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.007s
+
+FAILED (errors=5)

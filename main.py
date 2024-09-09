@@ -16,21 +16,24 @@ while exit_program == False:
 	if choice == 1:
 		print_list(contact_list)
 		
-	if choice == 2:
+	elif choice == 2:
 		first = input("Enter first name: ")
 		last = input("Enter last name: ")
-		add_contact(contact_list, first, last)
+		add_contact(first, last)
 		
-	if choice == 3:
+	elif choice == 3:
+		if len(contact_list) == 0:
+			print("List is empty!")
+			continue
 		index = int(input("Enter index to modify: "))
 		first = input("Enter first name: ")
 		last = input("Enter last name: ")
 		modify_contact(contact_list, index, first, last)
 		
-	if choice == 4:
+	elif choice == 4:
 		index = int(input("Enter index to modify: "))
 		delete_contact(contact_list, index)
 		
-	if choice == 5:
+	elif choice == 5:
 		exit_program = True
 

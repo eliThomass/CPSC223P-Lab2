@@ -2,37 +2,41 @@
 # Date: 9/4/2024
 # File Purpose: 
 
+contact_list_ = []
+
 def print_list(list_):
-	print("==========CONTACT LIST===========")
-	
-	for name in list_:
-		print(name)
+	print("\n========= CONTACT LIST ==========")
+	print("Index    First Name   Last Name")
+	index = 0
+	for contact in contact_list_:
+		print("{:<8} {:<12} {:<12}".format(index, contact['first'], contact['last']))
+		index += 1
 
-def add_contact(list_,first, last):
-	list_.append([first,last])
-	return list_
+def add_contact(first, last):
+	contact = {'first': first, 'last': last}
+	contact_list_.append(contact)
+	return contact_list_
 
-def modify_contact(list_, index, first, last):
-	if(index > len(list_)):
+def modify_contact(index, first, last):
+	if(index > len(contact_list_)):
 		print("Invalid index number.")
-		return list_
-	list_[index] = [first, last]
-	return list_
+		return contact_list_
+	modified_contact = {'first': first, 'last': last}
+	contact_list_[index] = modified_contact
+	return contact_list_
 	
-def delete_contact(list_, index,):
-	if(index > len(list_)):
+def delete_contact(index,):
+	if(index > len(contact_list_)):
 		print("Invalid index number.")
-		return list_
-	list_.pop(index)
-	return list_
+		return contact_list_
+	contact_list_.pop(index)
+	return contact_list_
 	
 def print_menu():
-	print("")
-	print("     *** TUFFY TITAN CONTACT MAIN MENU ***     ")
+	print("\n     *** TUFFY TITAN CONTACT MAIN MENU ***     ")
 	print("1. Print list")
 	print("2. Add contact")
 	print("3. Modify contact")
 	print("4. Delete contact")
-	print("5. Exit program")
-	print("")
+	print("5. Exit program\n")
 	return
