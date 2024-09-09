@@ -22,7 +22,7 @@ def add_contact(contact_list):
 def modify_contact(contact_list):
 	try:
 		index = int(input("Enter index to modify: "))
-		if(index >= len(contact_list)):		
+		if index < 0 or index >= len(contact_list):		
 			print("Invalid index number.")
 			return contact_list
 		first = input("Enter first name: ")
