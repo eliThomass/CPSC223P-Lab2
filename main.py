@@ -16,10 +16,7 @@ while exit_program == False:
 		print_list()
 		
 	elif choice == 2:
-		first = input("Enter first name: ")
-		last = input("Enter last name: ")
-		contact = [first, last]
-		add_contact(contact)
+		add_contact(contact_list_)
 		
 	elif choice == 3:
 		if len(contact_list_) == 0:
@@ -28,8 +25,7 @@ while exit_program == False:
 		modify_contact(contact_list_)
 		
 	elif choice == 4:
-		index = int(input("Enter index to modify: "))
-		delete_contact(index)
+		delete_contact(contact_list_)
 		
 	elif choice == 5:
 		exit_program = True

@@ -12,26 +12,29 @@ def print_list():
 		print("{:<8} {:<12} {:<12}".format(index, contact[0], contact[1]))
 		index += 1
 
-def add_contact(fullname):
-	contact_list_.append(fullname)
-	return contact_list_
+def add_contact(contact_list):
+	first = input("Enter first name: ")
+	last = input("Enter last name: ")
+	contact_list.append([first,last])
+	return contact_list
 
 def modify_contact(contact_list):
 	index = int(input("Enter index to modify: "))
-	if(index >= len(contact_list_)):
+	if(index >= len(contact_list)):		
 		print("Invalid index number.")
-		return contact_list_
+		return contact_list
 	first = input("Enter first name: ")
 	last = input("Enter last name: ")
-	contact_list_[index] = [first,last]
-	return contact_list_
+	contact_list[index] = [first,last]
+	return contact_list
 	
-def delete_contact(index):
-	if index < 0 or int(index) >= len(contact_list_):
+def delete_contact(contact_list):
+	index = int(input("Enter index to modify: "))
+	if index < 0 or int(index) >= len(contact_list):
 		print("Invalid index number.")
-		return contact_list_
-	contact_list_.pop(index)
-	return contact_list_
+		return contact_list
+	contact_list.pop(index)
+	return contact_list
 	
 def print_menu():
 	print("\n     *** TUFFY TITAN CONTACT MAIN MENU ***     ")
